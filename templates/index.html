@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<head>
+  <meta charset="UTF-8">
+  <title>OceanX</title>  
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/master.css' %}">
+
+</head>
+<body>
+  <div class="container-fluid" >
+    <div class="jumbotron">
+      <div class="container">
+        {% if user.is_authenticated %}
+          <h1>Welcome back {{ user }}</h1>
+        {% else %}
+          <h1>Welcome User!</h1>
+        {% endif %}
+    
+      </div>
+
+      <!-- ****** About Us Area Start ******* -->
+      <section class="ocean-about-us-area section-padding-100-0">
+        <div class="container">
+          <div class="row align-items-center">
+            <!-- About Us Thumbnail -->
+            <div class="col-12 col-md-6">
+              <div class="about-us-thumbnail mb-50">
+                <img src="{% static 'images/flexiwax.jpg' %}" alt="">
+              </div>
+            </div>
+            <!-- About Content -->
+            <div class="col-12 col-md-6">
+              <div class="about-us-content mb-50">
+                <!-- Section Heading -->
+                <div class="section-heading">
+                  <h2>About Us</h2>
+                  <div class="line"></div>
+                </div>
+                <p>We are a small Salon shop that has recently just joined the digitalization market. With 30 years of experience we strive to give customers quality services.</p>
+
+                <p>Despite being late on digitalization our salon will be able to provide substantial services.</p>
+
+                <ul>
+                  <!-- Single Skills Area -->
+                  <div class="single-skills-area mt-0">
+                    <h4><center>Experienced Staff</center></h4>
+                  </div>
+
+                  <!-- Single Skills Area -->
+                  <div class="single-skills-area mt-30">
+                    <h4><center>Latest Products</center></h4>
+                    
+                  </div>
+
+                  <!-- Single Skills Area -->
+                  <div class="single-skills-area mt-30">
+                    <h4><center>Friendly Staff</center></h4>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ****** About Us Area End ****** -->
+
+      <!-- Cool Facts Area Start -->
+      <section class="ocean-cta-area">
+        <div class="container">
+          <div class="row">
+            <!-- Cool Facts Area -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="single-cta text-center mt-50 mb-100">
+                <i class="icon_genius"></i>
+                <h2><span class="counter">30</span></h2>
+                <h5>Years Of Experience</h5>
+              </div>
+            </div>
+
+            <!-- Cool Facts Area -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="single-cta text-center mt-50 mb-100">
+                <i class="icon_heart_alt"></i>
+                <h2><span class="counter">700</span>+</h2>
+                <h5>Happy Customers</h5>
+              </div>
+            </div>
+
+            <!-- Cool Facts Area -->
+            <div class="col-12 col-sm-6 col-lg-3">
+              <div class="single-cta text-center mt-50 mb-100">
+                <i class="icon_book_alt"></i>
+                <h2><span class="counter">4</span></h2>
+                <h5>Certificate</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Cool Facts Area End -->
+
+      <!-- Ocean Service Area Start -->
+      <section class="ocean-service-area section-padding-100-0 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('static/images/bg1.jpg');">
+        <div class="container">
+          <div class="row align-items-center">
+            <!-- Service Content -->
+            <div class="col-12 col-lg-6">
+              <div class="service-content mb-30">
+                <!-- Section Heading -->
+                <div class="section-heading white">
+                  <h2>Our Services</h2>
+                  <div class="line"></div>
+                </div>
+
+                <div class="row">
+                  <!-- Single Service -->
+                  <div class="col-6 col-md-4">
+                    <div class="single-service mb-70">
+                      <img src="{% static 'images/colour.png' %}" alt="">
+                      <h6>Colour</h6>
+                    </div>
+                  </div>
+
+                  <!-- Single Service -->
+                  <div class="col-6 col-md-4">
+                    <div class="single-service mb-70">
+                      <img src="{% static 'images/haircut.png' %}" alt="">
+                      <h6>Haircut</h6>
+                    </div>
+                  </div>
+
+                  <!-- Single Service -->
+                  <div class="col-6 col-md-4">
+                    <div class="single-service mb-70">
+                      <img src="{% static 'images/blowwave.png' %}" alt="">
+                      <h6>Blowwaves</h6>
+                    </div>
+                  </div>
+
+                  <!-- Single Service -->
+                  <div class="col-6 col-md-4">
+                    <div class="single-service mb-70">
+                      <img src="{% static 'images/perm.png' %}" alt="">
+                      <h6>Perm</h6>
+                    </div>
+                  </div>
+
+                  <!-- Single Service -->
+                  <div class="col-6 col-md-4">
+                    <div class="single-service mb-70">
+                      <img src="{% static 'images/highlight.png' %}" alt="">
+                      <h6>Highlights</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Ocean Service Area End -->
+
+      <!-- Ocean Pricing Table Area Start -->
+      <section class="ocean-pricing-table-area section-padding-100">
+        <div class="container">
+          <div class="row">
+            <!-- Section Heading -->
+            <div class="col-12">
+              <div class="section-heading text-center">
+                <h2>Pricing</h2>
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="ocean-price-table table-responsive">
+                <table class="table table-borderless mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">Service Names</th>
+                      <th scope="col">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Full Head Colour</th>
+                      
+                      <td>$115.00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Half Hair Colour</th>
+                      
+                      <td>$80.00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Full Head Highlights</th>
+                      
+                      <td>$119.00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Half Head Highlights</th>
+                      
+                      <td>$70.00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Boys Haircut</th>
+                      
+                      <td>$10.00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Girls Haircut</th>
+                      
+                      <td>$15.00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Perm</th>
+                      
+                      <td>$199.00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Blowwave</th>
+                      
+                      <td>$30.00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Adult Male Haircut</th>
+                      
+                      <td>$15.00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Adult Female Haircut & Blowwave</th>
+                      
+                      <td>$35.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Ocean Pricing Table Area End -->
+      
+      <!-- ***** Ocean Staff  Area Start ***** -->
+      <section class="staff-area section-padding-100-0">
+        <div class="container">
+          <div class="row">
+            <!-- Section Heading -->
+            <div class="col-12">
+              <div class="section-heading text-center">
+                <h2>Our Staff</h2>
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="row">
+            <!-- Ocean Staff  Area -->
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="single-staff-area mb-100">
+                <img src="{% static 'img/bg-img/9.png' %}" alt="">
+                <!-- Staff Content -->
+                <div class="staff-content">
+                  <!-- Staff Info -->
+                  <div class="staff-info bg-gradient-overlay">
+                    <h5>Sally</h5>
+                    <p>Head Hairstylist</p>
+                    <p>30+ years of experience</p>
+                    <p>Owner since 1998</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ocean Staff  Area -->
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="single-staff-area mb-100">
+                <img src="{% static 'img/bg-img/10.png' %}" alt="">
+                <!-- Staff Content -->
+                <div class="staff-content">
+                  <!-- Staff Info -->
+                  <div class="staff-info bg-gradient-overlay">
+                    <h5>Alan</h5>
+                    <p>Head Barber</p>
+                    <p>30+ years of experience</p>
+                    <p>Member since 1998</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ocean Staff  Area -->
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="single-staff-area mb-100">
+                <img src="{% static 'img/bg-img/11.png' %}" alt="">
+                <!-- Staff Content -->
+                <div class="staff-content">
+                  <!-- Staff Info -->
+                  <div class="staff-info bg-gradient-overlay">
+                    <h5>Vincent</h5>
+                    <p>Assistant Hairstylist</p>
+                    <p>5 years of experience</p>
+                    <p>Member since 2005</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Ocean Staff Area End ***** -->
+      <!-- ***** Footer Area Start ***** -->
+      <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url('static/images/bg2.png');">
+        <div class="container">
+          <div class="row">
+            <!-- Single Footer Widget -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="single-footer-widget">
+                <a href="./index.html" class="d-block mb-4"><img src="{% static 'images/logo2.jpg' %}" alt=""></a>
+                <p>Ocean salon a family business run by Mr and Mrs Chan for the past 30 years, with their vast skill set they can provide you with the most afforable haircuts in all of Auckland.</p>
+                <div class="footer-contact">
+                  <p><i class="icon_pin"></i> 46 Waller Avenue, Bucklands Beach, Auckland New Zealand</p>
+                  <p><i class="icon_phone"></i> +64 09 537 3326</p>
+                  <p><i class="icon_mail"></i> oceanxspace@gmail.com</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Single Footer Widget -->
+            <div class="col-12 col-sm-6 col-lg">
+              <div class="single-footer-widget">
+                <!-- Widget Title -->
+                <h5 class="widget-title">Opening Hours</h5>
+
+                <!-- Opening Hours -->
+                <ul class="opening-hours">
+                  <li><span>Mon-Wed</span> <span>9.00-17.00</span></li>
+                  <li><span>Thu-Fri</span> <span>9.00-17.00</span></li>
+                  <li><span>Sat</span> <span>9.00-17.00</span></li>
+                  <li><span>Sun</span> <span>10.00-17.00</span></li>
+                  <li><span>Holiday</span> <span>Closed</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Single Footer Widget -->
+            <div class="col-12 col-sm-6 col-lg">
+              <div class="single-footer-widget">
+                <!-- Widget Title -->
+                <h5 class="widget-title">Quick Link</h5>
+
+                <!-- Quick Links Nav -->
+                <nav>
+                  <ul class="quick-links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="{% url 'booking' %}">Booking</a></li>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Services</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copywrite Area -->
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="copywrite-content">
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- ***** Footer Area End ***** -->
+
+      
+
+  
+      
+
+    </div>
+  </div>
+</body>
+
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<!--CodeNotes - block content will bring any data within it to the the parent html(base.html)-->
+{% block content %}
+
+<div class="row">
+  <!--CNotes - this will allow html to access the data of product and display it when this html is loaded -->
+  {% for product in products %}
+  <div class="col-lg-4">
+    <img class="thumbnail" src="{{product.imageURL}}">
+      <div class="box-element product">
+        <h6><strong>{{product.name}}</strong></h6>
+        <hr>
+
+        <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+        <a class="btn btn-outline-success" href="#">View</a>
+        <h4 style="display: inline-block; float: right"><strong>
+        ${{product.price|floatformat:2}}</strong></h4>
+
+      </div>
+
+  </div>
+  {% endfor %}
+
+
+</div>
+
+{% endblock content %}
+
+<!-- this is from store -->

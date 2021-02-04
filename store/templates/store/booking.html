@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+<div class="container" >
+      <div class="row">
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center white">
+            <h2>Book An Apointment</h2>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <!-- Appointment Form -->
+          <div class="appointment-form">
+            <form action="{% url 'booking' %}" method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="text" name="your-name" class="form-control" placeholder="Your Name" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="text" name="your-phone" class="form-control" placeholder="Your Phone" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="email" name="your-email" class="form-control" placeholder="Your Email" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="text" name="your-address" class="form-control" placeholder="Your Address">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group mb-30">
+                    <select name="your-service" class="form-control">
+                      <option value="Choose your service">Choose Your Service</option>
+                      <option value="Hairstylist">Hairstylist</option>
+                      <option value="Barber">Barber</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <select name="your-schedule" class="form-control">
+                    <option value="Choose Your Time">Choose Your Time</option>
+                    <option value="9:00 AM to 9:30 AM">9:00 AM to 9:30 AM</option>
+                    <option value="9:30 AM to 10:00 AM">9:30 AM to 10:00 AM</option>
+                    <option value="10:00 AM to 10:30 AM">10:00 AM to 10:30 AM</option>
+                    <option value="10:30 AM to 11:00 AM">10:30 AM to 11:00 AM</option>
+                    <option value="11:00 AM to 11:30 AM">11:00 AM to 11:30 AM</option>
+                    <option value="11:30 AM to 12:00 AM">11:30 AM to 12:00 AM</option>
+                    <option value="12:00 PM to 12:30 PM">12:00 PM to 12:30 PM</option>
+                    <option value="12:30 PM to 1:00 PM">12:30 PM to 1:00 PM</option>
+                    <option value="1:00 PM to 1:30 PM">1:00 PM to 1:30 PM</option>
+                    <option value="1:30 PM to 2:00 PM">1:30 PM to 2:00 PM</option>
+                    <option value="2:00 PM to 2:30 PM">2:00 PM to 2:30 PM</option>
+                    <option value="2:30 PM to 3:00 PM">2:30 PM to 3:00 PM</option>
+                    <option value="3:00 PM to 3:30 PM">3:00 PM to 3:30 PM</option>
+                    <option value="3:30 PM to 4:00 PM">3:30 PM to 4:00 PM</option>
+                    <option value="4:00 PM to 4:30 PM">4:00 PM to 4:30 PM</option>
+                    <option value="4:30 PM to 5:00 PM">4:30 PM to 5:00 PM</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <div name="your-date" class="form-group mb-30">
+                    <input type="date" id="start" name="your-date"
+                        value="2021-01-01"
+                        min="2021-01-01" max="2021-12-31">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group mb-30">
+                    <textarea name="your-message" class="form-control" placeholder="Your Message"></textarea>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" style="background-color: #00aeef;"  class="btn dento-btn">Booking Now</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+ {% if your_name %}
+    <center>
+    <h3>Review Your Information:</h3>
+    <strong>Your Name: </strong>{{your_name}}<br/>
+    <strong>Phone: </strong>{{your_phone}}<br/>
+    <strong>Email: </strong>{{your_email}}<br/>
+    <strong>Address: </strong>{{your_address}}<br/>
+    <strong>When: </strong>{{your_schedule}}<br/>
+    <strong>Appointment Day: </strong>{{your_date}}<br/>
+    <strong>Your Message: </strong>{{your_message}}<br/>
+    <br/><br/>
+    <strong>Note: </strong> This appointment hasn't been set yet. We will contact you shortly via telephone or email to confirm your appointment.
+    </center>
+ {% endif %}
+
+ <center>
+  
+ 
+
+
+
+
+</center>
+<br/><br/><br/><br/>
+
+
+{% endblock %}
